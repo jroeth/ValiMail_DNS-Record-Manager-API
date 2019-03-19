@@ -14,7 +14,7 @@ module DnsManager
     if Rails.env.production?
       rescue_from :all do |e|
         Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
-        error!({ error: "500 Internal server error." }, 500)
+        error!({ message: e.message }, 400)
       end
     end
   end
