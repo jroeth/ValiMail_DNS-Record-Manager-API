@@ -24,4 +24,9 @@ RSpec.describe Zone do
     it { is_expected.not_to be_valid }
   end
 
+  context 'random domain name' do
+    let(:zone_name) { Faker::Internet.domain_name }
+    it { is_expected.to be_valid }
+  end
+
 end

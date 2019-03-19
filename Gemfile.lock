@@ -103,6 +103,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    ipaddress (0.8.3)
     jaro_winkler (1.5.2)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -266,6 +267,7 @@ DEPENDENCIES
   faker
   grape
   grape-api-generator
+  ipaddress
   jbuilder (~> 2.5)
   kaminari-grape (~> 1.0, >= 1.0.1)
   nokogiri

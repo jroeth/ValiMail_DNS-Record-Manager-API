@@ -12,6 +12,7 @@ gem 'puma', '~> 3.11'
 
 gem 'grape'
 gem 'grape-api-generator'
+gem 'ipaddress'
 gem 'kaminari-grape', '~> 1.0', '>= 1.0.1'
 gem 'validates_hostname', '~> 1.0'
 
