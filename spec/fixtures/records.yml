@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  record_type: MyString
+  record_data: MyString
+  ttl: 1
+  zone: one
+
+two:
+  name: MyString
+  record_type: MyString
+  record_data: MyString
+  ttl: 1
+  zone: two
