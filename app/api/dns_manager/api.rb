@@ -4,18 +4,30 @@ module DnsManager
 
     content_type :json, "application/json;charset=UTF-8"
     format :json
+    default_error_formatter :json
+    cascade false
 
     helpers DnsManager::ApiHelpers
 
     rescue_from ActiveRecord::RecordNotFound do |e|
-      error!({ error: "404 Not found." }, 404)
+      Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
+      error!({ error: "404 Record not found." }.to_json, 404)
     end
 
-    if Rails.env.production?
-      rescue_from :all do |e|
-        Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
-        error!({ message: e.message }, 400)
-      end
+    rescue_from ActionController::RoutingError do |e|
+      Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
+      error!({ error: "404 Path not found." }.to_json, 404)
+    end
+
+    rescue_from :all do |e|
+      Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
+      error!({ message: e.message }, 400)
+    end
+
+    route :any, '*path' do
+      error!({ error:  'Not Found (API)',
+               detail: "No such route '#{request.path}'",
+               status: '404' }.to_json, 404)
     end
   end
 end
