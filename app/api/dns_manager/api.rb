@@ -11,17 +11,17 @@ module DnsManager
 
     rescue_from ActiveRecord::RecordNotFound do |e|
       Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
-      error!({ error: "404 Record not found." }.to_json, 404)
+      error!({ error: "404 Record not found." }, 404)
     end
 
     rescue_from ActionController::RoutingError do |e|
       Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
-      error!({ error: "404 Path not found." }.to_json, 404)
+      error!({ error: "404 Path not found." }, 404)
     end
 
     rescue_from :all do |e|
       Rails.logger.error e.message + "\n " + e.backtrace.join("\n ")
-      error!({ message: e.message }, 400)
+      error!({ error: e.message }, 400)
     end
 
     route :any, '*path' do
