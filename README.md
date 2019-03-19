@@ -27,21 +27,24 @@ Project uses:
 * Ruby-Grape latest (1.2.3)
 * grape-api-generator latest (0.1.0)
 
-## Database setup
+## Setup
+```
+gem install bundler
+bundle install
+```
 
+## Database setup
 ```
 rake db:migrate
 ```
 
 ## Run tests:
-
 ```
 rake db:test:prepare
 bundle exec rspec spec
 ```
 
 ## Run API on localhost
-
 ```
 RAILS_ENV=development rackup
 ```
