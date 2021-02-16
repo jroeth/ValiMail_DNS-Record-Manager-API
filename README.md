@@ -15,17 +15,17 @@ DELETE /api/v1/zone/:zid/record/:rid
 
 ## Ruby version
 
-Uses latest stable Ruby, at the time of this writing is 2.6.2 using rbenv (version 1.1.1) to install and manage my Rubies.
+Uses latest stable 2.x Ruby, at the time of this writing is 2.7.2 using asdf (version v0.8.0) with the ruby plugin to install and manage my Rubies.
 
 ## System dependencies
 
-I did this work on a MacBook Pro running MacOS 10.14.3.
+I did this work on a MacBook Pro running MacOS 10.15.7
 
 Project uses:
-* SQLite3 version 3.24.0
-* Rails latest stable 5.2.2.1
-* Ruby-Grape latest (1.2.3)
-* grape-api-generator latest (0.1.0)
+* SQLite3 version 3.34.0
+* Rails version 5.2.4.5
+* Ruby-Grape version (1.5.2)
+* grape-api-generator version (0.1.0)
 
 ## Setup
 ```

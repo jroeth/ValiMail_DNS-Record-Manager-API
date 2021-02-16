@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.2'
+ruby '2.7.2'
 
 gem 'grape'
 gem 'grape-api-generator'
@@ -9,7 +9,8 @@ gem 'ipaddress'
 gem 'jbuilder', '~> 2.5'
 gem 'kaminari-grape', '~> 1.0', '>= 1.0.1'
 gem 'puma', '~> 3.11'
-gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
+gem 'rails', '~> 5.2.4', '>= 5.2.4.5'
+gem 'sprockets', '~> 3.0'
 gem 'sqlite3', '~> 1.3.6'
 gem 'validates_hostname', '~> 1.0'
 
@@ -19,7 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rubocop'
-  gem 'nokogiri'
+  gem "nokogiri", ">= 1.11.0"
 end
 
 group :development do
